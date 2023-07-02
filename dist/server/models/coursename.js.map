@@ -1,0 +1,1 @@
+{"version":3,"file":"coursename.js","sourceRoot":"","sources":["../../../server/models/coursename.ts"],"names":[],"mappings":";;AAAA,qCAAqC;AAErC,MAAM,gBAAgB,GAAG,IAAI,QAAQ,CAAC,MAAM,CAAC;IAC3C,UAAU,EAAE,MAAM;CACjB,CAAC,CAAC;AACL,MAAM,UAAU,GAAG,QAAQ,CAAC,KAAK,CAAC,YAAY,EAAE,gBAAgB,CAAC,CAAC;AAElE,kBAAe,UAAU,CAAC"}
