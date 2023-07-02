@@ -1,2 +1,2 @@
-# Way-Production
-the way institute production code
+# Way-Training-Institute
+Way traning institute local code 
