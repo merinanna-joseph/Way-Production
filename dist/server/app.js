@@ -15,6 +15,7 @@ exports.app = app;
 app.use(compression());
 dotenv.config({ path: '.env' });
 app.set('port', (process.env.PORT || 4100));
+//change to 4100 for adding in 206 and local 3000
 app.use(cors({
     origin: '*'
 }));
