@@ -50,7 +50,8 @@ class BaseCtrl {
             try {
                 // console.log(req.body)
                 const obj = yield this.model.findOneAndUpdate({ _id: req.params.id }, req.body);
-                res.sendStatus(200).json(obj);
+                res.json(obj);
+                // res.sendStatus(200).json(obj);
             }
             catch (err) {
                 return res.status(400).json({ error: err.message });
