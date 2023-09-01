@@ -38,7 +38,7 @@ app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 // app.use(express.static('server/public'))
 //use below codes
-app.use(express.static('timesdocument'));
+app.use(express.static('thewaydocument'));
 // app.use(express.static('studentdocuments'));
 // app.use("/images",  express.static(path.join("server/public/")));
 let mongodbURI;
@@ -50,16 +50,15 @@ else {
     app.use(morgan('dev'));
 }
 mongoose.Promise = global.Promise;
-mongoose.connect(mongodbURI, { useNewUrlParser: true, useUnifiedTopology: true, })
+mongoose.connect(mongodbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(db => {
-    console.log('Connected to MongoDB', mongodbURI);
+    console.log('Connected to MongoDB');
     routes_1.default(app);
     app.get('/*', function (req, res) {
         res.sendFile(path.join(__dirname, '../client/index.html'));
     });
-    app.get('port');
     if (!module.parent) {
-        app.listen(app.get('port'), () => console.log(`App listening on portsssssssssssssssssssssss ${app.get('port')}`));
+        app.listen(app.get('port'), () => console.log(`App listening on port ${app.get('port')}`));
     }
 })
     .catch(err => console.error(err));

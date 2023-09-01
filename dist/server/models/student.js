@@ -16,6 +16,7 @@ const studentSchema = new mongoose.Schema({
     intake: Date,
     academic_Year: Number,
     admission_Date: Date,
+    joining_Date: Date,
     disablitity_status: String,
     tally_ID: String,
     // tally_ID : {
@@ -25,7 +26,8 @@ const studentSchema = new mongoose.Schema({
     //   sparse:true
     // },
     original_course_amount: Number,
-    total_payable_fee_with_discount: Number,
+    total_payable_fee_with_or_without_discount: Number,
+    discount: Number,
     isBook_collected: Boolean,
     isCertificate_collected: Boolean,
     university_register_number: String,
@@ -41,6 +43,7 @@ const studentSchema = new mongoose.Schema({
     studentCourse: {},
     studentFees: {},
     lead_officer: { type: String, ref: 'User' },
+    Trainer: { type: String, ref: 'User' },
     lead_source: String,
     subject_list: [],
     remarks: String,

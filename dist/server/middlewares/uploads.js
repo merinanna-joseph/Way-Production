@@ -11,7 +11,7 @@ var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         if (req.params.type == 'studymaterials') {
             // const directory = `server/public/images/studymaterials/${req.params.studymaterialid}`
-            const directory = `timesdocument/studymaterials/${req.params.studymaterialid}`;
+            const directory = `thewaydocument/studymaterials/${req.params.studymaterialid}`;
             // const directory = `server/public/images/studymaterials/${req.params.studymaterialid}`
             console.log(directory, "direct", req.params.type);
             if (!fs.existsSync(directory)) {
@@ -21,7 +21,7 @@ var storage = multer.diskStorage({
         }
         else if (req.params.type == 'studentdocuments') {
             // const directory = `server/public/images/studentdocuments/${req.params.studentid}`
-            const directory = `timesdocument/studentdocuments/${req.params.studentid}`;
+            const directory = `thewaydocument/studentdocuments/${req.params.studentid}`;
             console.log(directory, "direct", req.params.type);
             if (!fs.existsSync(directory)) {
                 fs.mkdirSync(directory, { recursive: true });
@@ -29,7 +29,7 @@ var storage = multer.diskStorage({
             cb(null, directory);
         }
         // cb(null,'server/public/images')
-        // cb(null, 'timesdocument');
+        // cb(null, 'thewaydocument');
     },
     filename: function (req, file, cb) {
         const ext = MIME_TYPE_MAP[file.mimetype];

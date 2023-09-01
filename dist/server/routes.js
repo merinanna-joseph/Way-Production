@@ -56,6 +56,7 @@ function setRoutes(app) {
     router.route('/user/usersnewpassword/:id').put(userCtrl.updateNewPassword);
     router.route('/user/:id').delete(userCtrl.delete);
     router.route('/users/getbyroles').get(userCtrl.getStaffs);
+    router.route('/users/getbyrolesteacher').get(userCtrl.getTeachers);
     router.route('/user/updateStudentCredentials/:id').put(userCtrl.updateStudentCredentials);
     //Course
     router.route('/course').post(courseCtrl.insert);
@@ -152,7 +153,7 @@ function setRoutes(app) {
     router.route('/student/upload/:studentid/:type').post([upload.single('image'), studentCtrl.uploadFile]);
     router.route('/student/uploads/:studentid/:type').post([upload.array('files'), studentCtrl.uploadsFile]);
     router.route('/student/getStudentByFeeId/:id').get(studentCtrl.getStudentByFeeId);
-    router.route('/student/getCountOfStudentswithCourse/:cid/:feeid').get(studentCtrl.getCountOfStudentswithCourse);
+    router.route('/student/getCountOfStudentswithCourse/:cid').get(studentCtrl.getCountOfStudentswithCourse);
     router.route('/students/countSubmittedStudent').get(studentCtrl.countSubmittedStudent);
     router.route('/student/studentbyusername/:username').get(studentCtrl.getStudentByUsername);
     router.route('/student/deleteImagepathfromdirectory').post(studentCtrl.deleteImagepathfromdirectory);
@@ -211,7 +212,7 @@ function setRoutes(app) {
     router.route('/coursesubject/:id').put(jwtHelper.verifyJwtToken, coursesubjectCtrl.update);
     router.route('/coursesubject/:id').delete(coursesubjectCtrl.delete);
     router.route('/coursesubject/studymaterialsuploads').post([upload.array('files'), coursesubjectCtrl.uploadsFile]);
-    router.route('/coursesubjects/getCoursesubjectsByCourse/:courseId/:yearIndex/:semIndex').get(coursesubjectCtrl.getCoursesubjectsByCourse);
+    router.route('/coursesubjects/getCoursesubjectsByCourse/:courseId').get(coursesubjectCtrl.getCoursesubjectsByCourse);
     // subject_study materials
     // router.route('/coursename/:id').delete(coursenameCtrl.delete);
     router.route('/studymaterial').post(studymaterialCtrl.insert);

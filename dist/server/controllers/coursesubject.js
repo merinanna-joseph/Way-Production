@@ -9,7 +9,7 @@ class CoursesubjectCtrl extends base_1.default {
         this.model = coursesubject_1.default;
         this.getCoursesubjectsByCourse = (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                const docs = yield this.model.find({ courseId: req.params.courseId, yearIndex: req.params.yearIndex, semIndex: req.params.semIndex }).populate('courseId');
+                const docs = yield this.model.find({ courseId: req.params.courseId }).populate('courseId');
                 res.status(200).json(docs);
             }
             catch (err) {

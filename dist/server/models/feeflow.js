@@ -7,9 +7,12 @@ const feeflowSchema = new mongoose.Schema({
     remarks: String,
     lastPaidDate: Date,
     // feeStructure: {},
-    fee_per_year: {},
+    // fee_per_year: {},
     studentId: { type: String, ref: 'Student' },
     ispaid: Boolean,
+    total_fee: Number,
+    balance_fee: Number,
+    paid_fee: Number,
 });
 const Feeflow = mongoose.model('Feeflow', feeflowSchema);
 exports.default = Feeflow;

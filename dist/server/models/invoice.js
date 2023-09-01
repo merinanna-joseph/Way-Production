@@ -2,16 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose = require("mongoose");
 const invoiceSchema = new mongoose.Schema({
-    year: String,
+    // year: String,
     paymentMode: String,
     remittedDate: Date,
-    registration_fee: Number,
-    coaching_fee: Number,
-    exam_fee: Number,
-    convocation_fee: Number,
-    attestation_fee: Number,
-    equalency_fee: Number,
-    other_fee: Number,
+    // registration_fee: Number,
+    // coaching_fee: Number,
+    // exam_fee: Number,
+    // convocation_fee: Number,
+    // attestation_fee: Number,
+    // equalency_fee: Number,
+    // other_fee: Number,
     miscellaneous_fee: Number,
     transport_fee: Number,
     previousyear_arrear: Number,
@@ -19,8 +19,8 @@ const invoiceSchema = new mongoose.Schema({
     total_remitted_fee: Number,
     remarks: String,
     studentId: { type: String, ref: 'Student' },
-    total_fee_per_year: Number,
-    balance_fee_per_year: Number,
+    total_fee: Number,
+    balance_fee: Number,
 });
 const Invoice = mongoose.model('Invoice', invoiceSchema);
 exports.default = Invoice;

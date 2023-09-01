@@ -1,0 +1,1 @@
+{"version":3,"file":"boardoruniversity.js","sourceRoot":"","sources":["../../../server/models/boardoruniversity.ts"],"names":[],"mappings":";;AAAA,qCAAqC;AACrC,MAAM,uBAAuB,GAAG,IAAI,QAAQ,CAAC,MAAM,CAAC;IAClD,iBAAiB,EAAC,MAAM;IACxB,aAAa,EAAC,EAAE;CACf,CAAC,CAAC;AACL,MAAM,iBAAiB,GAAG,QAAQ,CAAC,KAAK,CAAC,mBAAmB,EAAE,uBAAuB,CAAC,CAAC;AAEvF,kBAAe,iBAAiB,CAAC"}

@@ -120,6 +120,15 @@ class UserCtrl extends base_1.default {
                 return res.status(400).json({ error: err.message });
             }
         });
+        this.getTeachers = (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                const docs = yield this.model.find({ roles: { $in: 'teacher' } });
+                res.status(200).json(docs);
+            }
+            catch (err) {
+                return res.status(400).json({ error: err.message });
+            }
+        });
         this.updateStudentCredentials = (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 let hash = bcrypt.hashSync(req.body.password, 10);

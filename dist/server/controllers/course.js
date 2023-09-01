@@ -83,7 +83,7 @@ class CourseCtrl extends base_1.default {
         });
         this.getAllCourseandFeeByCenter = (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                const obj = yield this.model.find({ centers: req.params.center }).populate('feeId').populate('boardOrUniversity');
+                const obj = yield this.model.find({ centers: req.params.center }).populate('boardOrUniversity');
                 res.status(200).json(obj);
             }
             catch (err) {
@@ -92,7 +92,7 @@ class CourseCtrl extends base_1.default {
         });
         this.getCoursesByUniversityIdandCenter = (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                const obj = yield this.model.find({ boardOrUniversity: req.params.boardoruniversityID, centers: req.params.centername });
+                const obj = yield this.model.find({ boardOrUniversity: req.params.boardoruniversityID, centers: req.params.centername }).populate('boardOrUniversity');
                 res.status(200).json(obj);
             }
             catch (err) {

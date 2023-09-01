@@ -11,7 +11,7 @@ const courseSchema = new mongoose.Schema({
     courseType: String,
     startYear: String,
     endYear: String,
-    feeId: { type: String, ref: 'Fee' },
+    // feeId:{ type: String, ref: 'Fee' },
     coursenameId: String,
     coursebranchId: String,
     centers: String,

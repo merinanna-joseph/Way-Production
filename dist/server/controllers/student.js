@@ -335,7 +335,7 @@ class StudentCtrl extends base_1.default {
         });
         this.getCountOfStudentswithCourse = (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                const docs = yield this.model.find({ courseID: req.params.cid, feeID: req.params.feeid }).count();
+                const docs = yield this.model.find({ courseID: req.params.cid }).count();
                 res.status(200).json(docs);
             }
             catch (err) {
@@ -364,7 +364,7 @@ class StudentCtrl extends base_1.default {
         });
         this.getStudentByUsername = (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                const obj = yield this.model.findOne({ username: req.params.username }).populate('lead_officer').populate('courseID').populate('feeID');
+                const obj = yield this.model.findOne({ username: req.params.username }).populate('lead_officer').populate('courseID').populate('feeID').populate('Trainer');
                 res.status(200).json(obj);
             }
             catch (err) {
@@ -375,7 +375,7 @@ class StudentCtrl extends base_1.default {
         this.deleteImagepathfromdirectory = (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 // const path = req.body.path;
-                const path = 'timesdocument/studentdocuments/' + req.body.id + '/' + req.body.name;
+                const path = 'thewaydocument/studentdocuments/' + req.body.id + '/' + req.body.name;
                 // const path ='server/public/images/studentdocuments/630f1859b53bdc4278e0c2e3/tree-736885__480.jpg-1662145055440.png'
                 console.log(path, "   imgpath");
                 fs.unlink(path, (err) => {
