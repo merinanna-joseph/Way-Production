@@ -50,7 +50,7 @@ else {
     app.use(morgan('dev'));
 }
 mongoose.Promise = global.Promise;
-mongoose.connect(mongodbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongodbURI, { useNewUrlParser: true, useUnifiedTopology: true, })
     .then(db => {
     console.log('Connected to MongoDB');
     routes_1.default(app);
